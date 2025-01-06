@@ -13,10 +13,10 @@ const calculator = makeCalculator();
 
 const handler = (question: string) => {
   r1.question(question, (answer: string) => {
-    const output = calculator.calculate(answer);
-    if (output === 'quit') {
+    if (answer === 'quit') {
       process.exit(0)
     }
+    const output = calculator.calculate(answer);
     r1.write(`${output}\n`);
     handler("");
   })
